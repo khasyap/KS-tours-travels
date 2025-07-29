@@ -1,0 +1,13 @@
+.nav-link:hover{
+    transform: scale(1.2);
+}
+.imghover:hover{
+    transform:scale(0.9);
+    transition:all 0.3s ease-in-out;
+}
+ul{
+    margin-left: 600px;
+}
+li{
+    padding: 20px;
+}

@@ -1,0 +1,61 @@
+<div class="row">
+    <div class="col-md-12">
+        <h1>{{obj.placeName}}</h1>
+    </div>
+    <div class="col-md-4">
+        <img [src]="obj.placeImage" class="img-fluid">
+    </div>
+    <div class="col-md-8">
+        <h3>{{obj.placeName}}</h3>
+        <p>{{obj.placeDescription}}</p>
+        <p class="badge bg-primary">Price {{obj.placePrice}}</p>
+        <br>
+        <button class="btn btn-success"  (click)="selectplace(obj)" 
+        data-bs-toggle="modal" data-bs-target="#mymodal">Buy Now</button>
+        <button class="btn btn-warning" (click)="addNow()">Add to Cart</button>
+    </div>
+</div>
+
+
+     <div *ngIf="place">
+        
+        <div class="modal fade" id="mymodal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1>{{place.placeName}}</h1>
+                            <button class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="" class="form-label">place name</label>
+                                <input type="text" class="form-control" [(ngModel)]="place.placeName" disabled="">
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="form-label">place price</label>
+                                <input type="text" class="form-control" [(ngModel)]="place.placePrice" disabled="">
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="form-label">username</label>
+                                <input type="text" class="form-control" [(ngModel)]="username" disabled="">
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="form-label">Delivery Address</label>
+                                <input type="text" class="form-control" [(ngModel)]="address">
+                            </div>
+                             <div class="form-group">
+                                <label for="" class="form-label">Phone number</label>
+                                <input type="text" class="form-control" [(ngModel)]="phone">
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-success" (click)="ordernow()">order now</button>
+                                <button class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div> 

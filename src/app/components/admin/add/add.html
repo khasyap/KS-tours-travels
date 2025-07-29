@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-md-4">
+        <form action="" [formGroup]="productForm" (ngSubmit)="submitPlace()">
+            <div class="form-group">
+                <label for="" class="form-label">Place Id</label>
+                <input type="text" class="form-control" formControlName="placeId">
+            </div>
+            <div class="form-group">
+                <label for="" class="form-label">Place Name</label>
+                <input type="text" class="form-control" formControlName="placeName">
+            </div>
+            <div class="form-group">
+                <label for="" class="form-label">Place Description</label>
+                <input type="text" class="form-control" formControlName="placeDescription">
+            </div>
+            <div class="form-group">
+                <label for="" class="form-label">Place Category</label>
+                <input type="text" class="form-control" formControlName="placeCategory">
+            </div>
+            <div class="form-group">
+                <label for="" class="form-label">Place Price</label>
+                <input type="text" class="form-control" formControlName="placePrice">
+            </div>
+            <div class="form-group">
+                <label for="" class="form-label">Place Image</label>
+                <input type="text" class="form-control" formControlName="placeImage">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">Add Place</button>
+            </div>
+        </form>
+    </div>
+</div>

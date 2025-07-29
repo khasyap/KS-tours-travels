@@ -1,0 +1,14 @@
+<table class="table table-bordered">
+    <tr>
+        <th>placeId</th>
+        <th>placeImage</th>
+        <th>order at</th>
+        <th>location</th>
+    </tr>
+    <tr *ngFor="let p of products">
+        <td>{{p.placeId}}</td>
+        <td><img [src]="p.placeImage" height="100" width="100" alt=""></td>
+        <td>{{p.orderedDate | date:'dd/MM/yyyy'}}</td>
+        <td>{{p.address}}</td>
+    </tr>
+</table>

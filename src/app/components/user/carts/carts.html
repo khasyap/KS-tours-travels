@@ -1,0 +1,64 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of cartObj">
+      <div class="card">
+        <img [src]="p.placeImage" height="300">
+      </div>
+      <div class="card-body">
+        <h1>{{p.placeName}}</h1>
+        <p>{{p.placeDescription}}</p>
+      </div>
+      <div class="class-footer">
+      <button class="btn btn-success" (click)="selectplace(p)" 
+        data-bs-toggle="modal" data-bs-target="#mymodal">Buy</button>
+
+
+        <button class="btn btn-danger"(click)="deleteNow(p.placeId)">
+                    <i class="fa-solid fa-trash"></i>Delete</button>
+        
+      </div>
+    </div>
+  
+
+ <div *ngIf="place">
+        
+        <div class="modal fade" id="mymodal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1>{{place.placeName}}</h1>
+                            <button class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="" class="form-label">place name</label>
+                                <input type="text" class="form-control" [(ngModel)]="place.placeName" disabled="">
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="form-label">place price</label>
+                                <input type="text" class="form-control" [(ngModel)]="place.placePrice" disabled="">
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="form-label">username</label>
+                                <input type="text" class="form-control" [(ngModel)]="username" disabled="">
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="form-label">Delivery Address</label>
+                                <input type="text" class="form-control" [(ngModel)]="address">
+                            </div>
+                             <div class="form-group">
+                                <label for="" class="form-label">Phone number</label>
+                                <input type="text" class="form-control" [(ngModel)]="phone">
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-success" (click)="ordernow()">order now</button>
+                                <button class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div> 
