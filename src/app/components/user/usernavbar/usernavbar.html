@@ -1,16 +1,16 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-3">
-            <nav class="navbar bg-dark navbar-dark navbar navbar-expand-md fixed-top">
+            <nav class="navbar  navbar navbar-expand-md fixed-top">
                <a class="nav-barnd"><img src="Logo.png" alt="" width="100px" height="100px"></a>
                 <ul class="navbar-nav collapse navbar-collapse  fs-4 ">
-                    <li class="nav-item"><a routerLink="/user/home" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a routerLink="/user/view" class="nav-link">ViewPlaces</a></li>
-                    <li class="nav-item"><a routerLink="/user/orders" class="nav-link">Order</a></li>
-                    <li class="nav-item"><a routerLink="/user/carts" class="nav-link">Cart
+                    <li class="nav-item"><a routerLink="/user/home" class="nav-link text-white">Home</a></li>
+                    <li class="nav-item"><a routerLink="/user/city" class="nav-link text-white">ViewCities</a></li>
+                    <li class="nav-item"><a routerLink="/user/orders" class="nav-link text-white">Order</a></li>
+                    <li class="nav-item"><a routerLink="/user/carts" class="nav-link text-white">Cart
                         <span class="badge bg-danger">{{len}}</span>
                     </a></li>
-                    <li class="nav-item"><a (click)="logout()"  class="nav-link">Logout</a></li>
+                    <li class="nav-item"><a (click)="logout()"  class="nav-link text-white">Logout</a></li>
                 </ul>
             </nav>
         </div>

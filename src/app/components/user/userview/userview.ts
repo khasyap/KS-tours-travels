@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Items } from '../../../services/items';
-import { Route, Router } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-userview',
@@ -9,8 +9,9 @@ import { Route, Router } from '@angular/router';
   styleUrl: './userview.css'
 })
 export class Userview {
-  constructor(private service:Items, private router:Router){}
+  constructor(private service:Items, private router:Router,private r:ActivatedRoute){}
       myproducts:any;
+      place:any;
       opendetails(pid:any){
       console.log(pid);
       this.router.navigateByUrl(`/user/details/${pid}`)
@@ -21,5 +22,6 @@ export class Userview {
             this.myproducts=data;
             console.log(this.myproducts)
           })
+          this.place=this.r.snapshot.paramMap.get("place");
       }
 }

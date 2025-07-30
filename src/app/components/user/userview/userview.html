@@ -1,21 +1,26 @@
-<div class="container">
-<div class="row">
-    <div class="col-md-3" *ngFor="let p of myproducts">
-        <a (click)="opendetails(p.placeId)">
-        <div class="card">
+
+
+ <div class="container">
+  <div class="row">
+    <ng-container *ngFor="let p of myproducts">
+        
+      <ng-container *ngIf="p.PlaceArea?.trim().toLowerCase() === place?.trim().toLowerCase()">
+        <div class="col-md-3 mb-2">
+            <a (click)="opendetails(p.placeId)">
+          <div class="card">
             <div class="card-header">
-                <img [src]="p.placeImage" class="img-fluid" height="150" alt="">
+              <img [src]="p.placeImage" height="250px" width="250px" alt="">
             </div>
             <div class="card-body">
-                <h1 class="card-title">{{p.placeName}}</h1>
-                <p>
-                    {{p.placeDescription}}
-                </p>
-                <p>Price<label for="" class="badge bg-primary">{{p.placePrice}}</label></p>
+              <h1 class="card-title">{{p.placeName | slice: 0 : 10}}...</h1>
+              <p>{{p.placeDescription | slice: 0 : 50}}...</p>
+              <p>Price <label class="badge bg-primary">{{p.placePrice}}</label></p>
             </div>
             <div class="card-footer"></div>
-        </div>
+          </div>
         </a>
-    </div>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
 </div>
- </div>

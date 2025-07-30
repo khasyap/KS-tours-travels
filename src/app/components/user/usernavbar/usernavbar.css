@@ -11,3 +11,6 @@ ul{
 li{
     padding: 20px;
 }
+nav{
+    background: linear-gradient(to right, #727e10, #077132, #5f5f10);
+}

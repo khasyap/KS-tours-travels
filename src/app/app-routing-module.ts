@@ -13,6 +13,8 @@ import { Orders } from './components/user/orders/orders';
 import { Orderdetails } from './components/user/orderdetails/orderdetails';
 import { Carts } from './components/user/carts/carts';
 import { Viewdetails } from './components/user/viewdetails/viewdetails';
+import { City } from './components/admin/city/city';
+import { Usercity } from './components/user/usercity/usercity';
 
 const routes: Routes = [
   {path:'',component:Login},
@@ -20,14 +22,17 @@ const routes: Routes = [
     children:[
       {path:'home',component:Home},
       {path:'add',component:Add},
-      {path:'view',component:View},
+      {path:'city',component:City},
+      {path:'view/:place',component:View},
       {path:'manage',component:Manage},
+      
     ]
   },
   {path:'user',component:Usernavbar,
     children:[
       {path:'home',component:Userhome},
-      {path:'view',component:Userview},
+      {path:'city',component:Usercity},
+      {path:'view/:place',component:Userview},
       {path:'orders',component:Orders},
       {path:'carts',component:Carts},
       {path:'details/:id',component:Viewdetails},

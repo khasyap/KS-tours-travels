@@ -17,6 +17,8 @@ import { Userhome } from './components/user/userhome/userhome';
 import { Carts } from './components/user/carts/carts';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Viewdetails } from './components/user/viewdetails/viewdetails';
+import { City } from './components/admin/city/city';
+import { Usercity } from './components/user/usercity/usercity';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { Viewdetails } from './components/user/viewdetails/viewdetails';
     Usernavbar,
     Userhome,
     Carts,
-    Viewdetails
+    Viewdetails,
+    City,
+    Usercity
   ],
   imports: [
     BrowserModule,

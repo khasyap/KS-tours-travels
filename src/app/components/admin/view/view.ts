@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Items } from '../../../services/items';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-view',
@@ -8,13 +9,15 @@ import { Items } from '../../../services/items';
   styleUrl: './view.css'
 })
 export class View {
-   constructor(private service:Items){}
+   constructor(private service:Items,private r:ActivatedRoute){}
     myproducts:any;
-
+    place:any;
+    obj:any;
     ngOnInit(){
         this.service.getItems().subscribe((data)=>{
           this.myproducts=data;
-          console.log(this.myproducts)
         })
+
+      this.place=this.r.snapshot.paramMap.get("place");
     }
 }

@@ -14,6 +14,7 @@ export class Add {
     constructor(private fb:FormBuilder,private service:Items){
         this.productForm=this.fb.group({
           placeId:['',Validators.required],
+          placeAre:['',Validators.required],
           placeName:['',Validators.required],
           placeDescription:['',Validators.required],
           placeCategory:['',Validators.required],

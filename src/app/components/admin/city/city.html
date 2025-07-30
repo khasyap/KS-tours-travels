@@ -1,0 +1,19 @@
+<div class="container">
+<div class="row">
+    <div class="col-md-3 mb-2" *ngFor="let p of cities">
+        <a (click)="viewmore(p)">
+        <div class="card">
+            <div class="card-header">
+                <img src="https://www.financialexpress.com/wp-content/uploads/2023/02/Bon-Voyage-Here-are-7-destinations-from-Delhi-that-would-make-for-great-road-trips-Check-best-time-to-visit-distance-and-more.jpg" height="250px" width="250px" alt="">
+            </div>
+            <div class="card-body">
+                <h1 class="card-title">{{p}}</h1>
+            </div>
+            <div class="card-footer">
+                <button>Click me</button>
+            </div>
+        </div>
+    </a>
+    </div>
+</div>
+ </div>

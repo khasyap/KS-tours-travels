@@ -1,20 +1,36 @@
-<div class="row">
-    <div class="col-md-12">
-        <h1>{{obj.placeName}}</h1>
+<div class="card my-3 shadow-lg">
+  <div class="card-header text-center bg-light">
+    <h1 class="card-title mb-0">{{ obj.placeName }}</h1>
+  </div>
+
+  <div class="card-body">
+    <div class="row align-items-center">
+      <div class="col-md-4">
+        <img [src]="obj.placeImage" class="img-fluid rounded" alt="Place Image">
+      </div>
+      <div class="col-md-8">
+        <h3>{{ obj.placeName }}</h3>
+        <p>{{ obj.placeDescription }}</p>
+
+        <p class="badge bg-primary">Price: {{ obj.placePrice }}</p>
+        <p><strong>Area:</strong> {{ obj.PlaceArea }}</p>
+
+        <div class="mt-3">
+          <button class="btn btn-success me-2"
+                  (click)="selectplace(obj)"
+                  data-bs-toggle="modal" data-bs-target="#mymodal">
+            Buy Now
+          </button>
+
+          <button class="btn btn-warning" (click)="addNow()">
+            Add to Cart
+          </button>
+        </div>
+      </div>
     </div>
-    <div class="col-md-4">
-        <img [src]="obj.placeImage" class="img-fluid">
-    </div>
-    <div class="col-md-8">
-        <h3>{{obj.placeName}}</h3>
-        <p>{{obj.placeDescription}}</p>
-        <p class="badge bg-primary">Price {{obj.placePrice}}</p>
-        <br>
-        <button class="btn btn-success"  (click)="selectplace(obj)" 
-        data-bs-toggle="modal" data-bs-target="#mymodal">Buy Now</button>
-        <button class="btn btn-warning" (click)="addNow()">Add to Cart</button>
-    </div>
+  </div>
 </div>
+
 
 
      <div *ngIf="place">
@@ -40,7 +56,7 @@
                                 <input type="text" class="form-control" [(ngModel)]="username" disabled="">
                             </div>
                             <div class="form-group">
-                                <label for="" class="form-label">Delivery Address</label>
+                                <label for="" class="form-label">Address</label>
                                 <input type="text" class="form-control" [(ngModel)]="address">
                             </div>
                              <div class="form-group">
